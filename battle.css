@@ -1,0 +1,496 @@
+@font-face {
+    font-family: "PressStart";
+    src: url("./fonts/PressStart2P-Regular.ttf");
+}
+
+/********/
+
+/*BATTLE*/
+
+/********/
+
+body {
+background: rgb(126,126,126);
+background: radial-gradient(circle, rgba(126,126,126,1) 0%, rgba(0,0,0,1) 100%);
+}
+
+h1 {
+    color: white;
+}
+
+.return_menu {
+    display: inline-block;
+    padding: 15px 25px;
+    font-family: Roboto;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: rgb(75, 75, 75, 1);
+    color: white;
+    font-size: 15px;
+    border: 2px white solid;
+    transition: all 0.3s ease;
+}
+
+.return_menu i {
+    margin-right: 10px;
+}
+
+.return_menu:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    cursor: pointer;
+}
+
+/*ATH*/
+
+.ath {
+    display: flex;
+    width: 100%;
+    height: 15%;
+    /*border: 1px red solid;*/
+    background-color: rgba(255, 255, 255, 0.4);
+    position: relative;
+}
+
+.bloc_ath {
+    width: 35%;
+    /*border: 1px red solid;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.bloc_ath .row {
+    width: 80%;
+    height: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 20px;
+}
+
+.player_name {
+    max-width: 40%;
+    font-family: PressStart;
+    font-size: 1em;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 15px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.player_name p {
+    margin: 0;
+
+}
+
+/*Barres de vie et de compétence spéciale*/
+
+.life_bar {
+    margin: 0 20px;
+    width: 80%;
+    height: 50%;
+    background: lightgray;
+    border: 2px black solid;
+    display: flex;
+    border-radius: 15px;
+}
+
+.life_bar_state {
+    background: rgb(48, 117, 48);
+    background: linear-gradient(90deg, rgba(48, 117, 48, 1) 0%, rgba(4, 217, 3, 1) 100%);
+    width: 80%;
+    height: 100%;
+    border-radius: 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.life_bar_state p {
+    margin: 0 20px;
+    color: white;
+    font-family: PressStart, Roboto;
+    font-size: 20px;
+}
+
+
+
+.right .life_bar_state {
+    background: rgb(48, 117, 48);
+    background: linear-gradient(270deg, rgba(48, 117, 48, 1) 0%, rgba(4, 217, 3, 1) 100%);
+    justify-content: flex-end;
+}
+
+.special_bar {
+    width: 40%;
+    background: lightgray;
+    border: 2px black solid;
+    display: flex;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+}
+
+.special_bar_state {
+    width: 50%;
+    height: 100%;
+    background: yellow;
+    border-radius: 15px;
+
+}
+
+.left .life_bar,
+.left .special_bar {
+    justify-content: flex-start;
+}
+
+.right .life_bar,
+.right .special_bar {
+    justify-content: flex-end;
+}
+
+.trait {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background-color: rgba(99, 173, 89, 0.7);
+}
+
+.left .trait {
+    left: 80%;
+}
+
+.right .trait {
+    right: 80%;
+}
+
+
+/*Screen pour infos du combat*/
+
+#display_infos {
+    width: 30%;
+    min-width: 400px;
+    min-height: 350px;
+    height: 25vh;
+    background: #2F5646;
+    margin: auto;
+    border: 5px black solid;
+    font-family: 'PressStart';
+    font-size: 11px;
+    line-height: 20px;
+    color: #FFFF98;
+    padding: 15px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    border-radius: 15px;
+}
+
+
+#display_infos span {
+    color: pink;
+}
+
+#display_infos .enemy_name {
+    color: orange;
+}
+
+.display_turn {
+    color: white;
+    text-transform: uppercase;
+    border-top: 1px rgba(255, 255, 255, 0.1) solid;
+    padding-top: 20px;
+}
+
+.actions {
+    position: absolute;
+    height: 85%;
+    min-width: 15%;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.actions button {
+    display: inline-block;
+    min-height: 75px;
+    margin: 10px 10px;
+    padding: 15px 20px;
+    font-family: Roboto;
+    font-weight: bold;
+    border-radius: 10px;
+    color: white;
+    border: 2px white solid;
+    transition: all 0.3s ease;
+}
+
+.actions button:hover {
+
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    cursor: pointer;
+}
+
+.actions i {
+    margin: 0 10px;
+}
+
+.next {
+    background-color: rgb(0, 0, 255);
+}
+
+
+.attack {
+    background-color: red;
+}
+
+.specialattack {
+    background-color: purple;
+}
+
+/*Affichage game over*/
+
+.gameOver {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    font-family: PressStart;
+    font-size: 4em;
+}
+
+.gameOver.lose {
+    color: red;
+}
+
+.gameOver.win {
+    color: green;
+}
+
+/**************/
+
+/*Battleground*/
+
+/**************/
+
+#battleground {
+    margin-top: 50px;
+    width: 100%;
+    min-width: 1000px;
+    height: 750px;
+    background: url('./img/bg-arena.gif');
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+}
+
+/*FIGHTERS ANIMATIONS*/
+
+/*On retourne le perso pour qu'il soit tourné vers l'ennemi*/
+
+#myFighter {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    position: absolute;
+    top: 70%;
+    left: 25%;
+}
+
+#enemyFighter {
+    position: absolute;
+    top: 70%;
+    right: 25%;
+}
+
+
+@keyframes moveToRight {
+    from {
+        left: 25%;
+    }
+    to {
+        left: 59%;
+    }
+}
+
+@keyframes moveToLeft {
+    from {
+        right: 25%;
+    }
+    to {
+        right: 55%;
+    }
+}
+
+/*TOUCAN*/
+
+@keyframes spritetoucan {
+    from {
+        background-position: 0px -20px;
+    }
+
+    to {
+        background-position: -1100px -30px;
+    }
+}
+
+@keyframes spritetoucanSpecial {
+    from {
+        background-position: 0px -725px;
+    }
+
+    to {
+        background-position: -2000px -700px;
+    }
+}
+
+.attacking_to_right.toucan {
+    animation: spritetoucan 0.9s steps(5), moveToRight 1.5s;
+    z-index: 100;
+}
+
+.special_attacking_to_right.toucan {
+
+    animation: spritetoucanSpecial 1.5s steps(9), moveToRight 1.5s;
+    z-index: 100;
+}
+
+.attacking_to_left.toucan {
+    animation: spritetoucan 0.9s steps(5), moveToLeft 1.5s;
+    z-index: 100;
+}
+
+.special_attacking_to_left.toucan {
+
+    animation: spritetoucanSpecial 1.5s steps(9), moveToLeft 1.5s;
+    z-index: 100;
+}
+
+.dead.toucan {
+    background-position: 0 -935px;
+}
+
+
+
+
+/* LOUP */
+
+@keyframes spriteloup {
+
+    from {
+        background-position: -30px -50px;
+    }
+
+    to {
+        background-position: -1100px -50px;
+    }
+
+}
+
+
+.attacking_to_right.loup {
+    animation: spriteloup 1s steps(5), moveToRight 1.5s;
+    z-index: 100;
+}
+
+.attacking_to_left.loup {
+    animation: spriteloup 1s steps(5), moveToLeft 1.5s;
+    z-index: 100;
+}
+
+.special_attacking_to_right.loup {
+    animation: spriteloup 1s steps(5), moveToRight 1.5s;
+    z-index: 100;
+}
+
+.special_attacking_to_left.loup {
+
+    animation: spriteloup 1s steps(5), moveToLeft 1.5s;
+    z-index: 100;
+}
+
+.dead.loup {
+    background-position: -1800px -1200px;
+}
+
+.bloodAnim {
+    background: url('img/blood3.gif');
+
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1000;
+}
+
+/* ESCARGOT */
+
+@keyframes moveToRight2 {
+    from {
+        left: 25%;
+    }
+    to {
+        left: 62%;
+    }
+}
+
+@keyframes moveToLeft2 {
+    from {
+        right: 25%;
+    }
+    to {
+        right: 62%;
+    }
+}
+
+@keyframes spriteescargot {
+    from {
+        background-position: 0px 0px;
+    }
+
+    to {
+        background-position: -800px 0px;
+    }
+
+}
+
+.attacking_to_right.escargot {
+    animation: spriteescargot 1s steps(6), moveToRight2 1.5s;
+    z-index: 100;
+}
+
+.attacking_to_left.escargot {
+    animation: spriteescargot 1s steps(6), moveToLeft2 1.5s;
+    z-index: 100;
+}
+
+.special_attacking_to_right.escargot {
+    animation: spriteescargot 1s steps(6), moveToRight2 1.5s;
+    z-index: 100;
+}
+
+.special_attacking_to_left.escargot {
+    animation: spriteescargot 1s steps(6), moveToLeft2 1.5s;
+    z-index: 100;
+}
+
+.dead.escargot {
+    background-position: -1180px -720px;
+}
+
+
+.explosion {
+    background: url(./img/explosion.gif);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 1000;
+}

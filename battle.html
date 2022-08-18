@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RPG - Battle</title>
+    <link rel="stylesheet" href="./style.css" type="text/css" />
+    <link rel="stylesheet" href="./battle.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+
+</head>
+
+<body>
+    <header>
+        <div class="title">
+            <h1>COMBAT D'ANIMAUX ILLÉGAUX</h1>
+        </div>
+
+    </header>
+    <main>
+        <button class="return_menu" id="return_menu">
+            <i class="fa-solid fa-angle-left"></i>Return to menu
+        </button>
+
+        <section id="battleground">
+
+            <div class="ath">
+                <div class="bloc_ath left">
+
+                    <div class="life_bar">
+                        <div id="my_health_bar" class="life_bar_state">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="special_bar">
+                            <div id="my_special_bar" class="special_bar_state">
+
+                            </div>
+                            <div class="trait"></div>
+                        </div>
+
+                        <div id="player1_name" class="player_name">
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="display_infos">
+                    <p class="display_turn">TOUR 1: </p>
+                </div>
+
+
+                <div class="bloc_ath right">
+                    <div class="life_bar">
+                        <div id="enemy_health_bar" class="life_bar_state"></div>
+                    </div>
+
+                    <div class="row">
+                        <div id="player2_name" class="player_name">
+                        </div>
+                        <div class="special_bar">
+                            <div id="enemy_special_bar" class="special_bar_state">
+
+                            </div>
+                            <div class="trait"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="actions">
+                <button id="next_turn" class="next">NEXT TURN <i class="fa-solid fa-arrow-right"></i></button>
+                <button id="attack1" class="attack">ATTACK<i class="fa-solid fa-burst"></i>
+                </button>
+                <button id="special_attack1" class="specialattack">SPECIAL ATTACK<i class="fa-solid fa-star"></i></button>
+            </div>
+            <div id="gameOver" class="gameOver">
+
+            </div>
+            <div id="myFighter"></div>
+            <div id="enemyFighter"></div>
+        </section>
+    </main>
+
+    <script type="module" src="./main.js "></script>
+    <script type="module" src="./modules/character.js"></script>
+</body>
+
+</html>

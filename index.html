@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RPG - Menu</title>
+    <link rel="stylesheet" href="./style.css" type="text/css" />
+</head>
+
+<body>
+    <header>
+        <div class="title">
+            <h1>COMBAT D'ANIMAUX ILLÉGAUX</h1>
+
+        </div>
+    </header>
+    <main>
+
+        <form class="form_name container">
+            <p class="question_form">LAQUELLE DE CES ESPECES PROTEGEES VAS-TU ENVOYER AU COMBAT ?</p>
+            <input id="name_input" type="text" name="" placeholder="Le nom de ta bête de combat" maxlength="20" />
+        </form>
+        <section class="choice container">
+
+            <div class="fighter" id="fighter1">
+                <h2>MECHANT TOUCAN</h2>
+                <div class="sprite_container">
+                    <div class="toucan"></div>
+                </div>
+            </div>
+
+            <div class="fighter" id="fighter2">
+                <h2>LOUP AGRESSIF</h2>
+                <div class="sprite_container">
+                    <div class="loup"></div>
+                </div>
+            </div>
+
+            <div class="fighter" id="fighter3">
+                <h2>ESCARGOT MALFAISANT</h2>
+                <div class="sprite_container">
+                    <div class="escargot">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="start_bar">
+            <button id="validate">JOUER</button>
+        </div>
+
+
+    </main>
+    <script type="module" src="index.js"></script>
+    <script type="module" src="./modules/choicemenu.js "></script>
+</body>
+
+</html>

@@ -1,0 +1,283 @@
+@font-face {
+    font-family: "PressStart";
+    src: url("./fonts/PressStart2P-Regular.ttf");
+}
+
+/**************GLOBAL*****************/
+
+* {
+    box-sizing: border-box;
+    /*border: 1px red solid;*/
+}
+
+body {
+    width: 1500px;
+    height: 100vh;
+    margin: auto;
+    font-family: Roboto, sans-serif;
+    background: url('./img/bg-arena.gif');
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+.container {
+    padding: 75px 0;
+    max-width: 1100px;
+    margin: auto;
+}
+
+h1 {
+    margin: 0;
+    font-size: 30px;
+    letter-spacing: 3px;
+    text-align: center;
+    font-family: PressStart, Roboto;
+    color: white;
+}
+
+h2 {
+    font-size: 20px;
+    margin-bottom: 30px;
+    font-family: PressStart, Roboto;
+}
+
+/*header*/
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.title {
+    padding: 25px 45px;
+    background-color: rgba(0, 0, 0, 0.75);
+    border-radius: 18px;
+}
+
+.subtitle {
+    margin-top: 25px;
+    color: white;
+    margin: 0;
+    font-size: 25px;
+    text-align: center;
+}
+
+.subtitle2 {
+    margin: 0;
+    font-size: 1.7em;
+    text-align: center;
+}
+
+/*form*/
+
+.form_name {
+    font-size: 30px;
+    padding: 15px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.form_name input {
+    width: 500px;
+    margin-top: 30px;
+    font-size: 30px;
+}
+
+.question_form {
+    margin: 0;
+    padding: 30px 0;
+    font-family: PressStart, Roboto;
+    text-align: center;
+    color: #FFFEB4;
+    background-color: rgba(0, 0, 0, 0.70);
+}
+
+/*section choice*/
+
+main {
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 18px;
+}
+
+.choice {
+    display: grid;
+    grid-template-areas: "fighter fighter fighter";
+    justify-content: center;
+    gap: 50px;
+    padding: 10px 0;
+}
+
+.fighter {
+    width: 375px;
+    height: 375px;
+    min-height: 150px;
+
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 25px;
+    color: white;
+    background-color: rgba(35, 35, 35, 0.9);
+    transition: all 1s ease;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+    position: relative;
+}
+
+
+
+.fighter:hover {
+    width: 425px;
+    height: 425px;
+    background-color: rgba(65, 65, 65, 0.9);
+}
+
+
+.fighter.selected {
+    border: 10px solid #6EFF5A;
+    color: #6EFF5A;
+}
+
+/*.sprite_container {
+    */
+
+/*    width: 50%;*/
+
+/*    height: 50%;*/
+
+/*border: 1px red solid;*/
+
+/*}*/
+
+/*SPRITES*/
+
+/*Toucan*/
+
+.toucan {
+    display: inline-block;
+    height: 220px;
+    width: 220px;
+    background: url('img/assets/tucano-animated.png');
+    background-position: 0 -30px;
+}
+
+@keyframes sprite {
+
+    from {
+
+        background-position: 0px -20px;
+
+    }
+
+    to {
+
+        background-position: -1100px -30px;
+
+    }
+
+}
+
+
+#fighter1:hover .toucan {
+    animation: sprite 0.9s steps(5);
+}
+
+
+/*Loup*/
+
+.loup {
+    display: inline-block;
+    height: 220px;
+    width: 220px;
+    background: url('img/assets/lobocinza-animated.png');
+    background-position: -30px -50px;
+}
+
+@keyframes sprite2 {
+    from {
+        background-position: -30px -50px;
+    }
+
+    to {
+        background-position: -1100px -50px;
+    }
+
+}
+
+#fighter2:hover .loup {
+    animation: sprite2 1s steps(5);
+}
+
+/*Escargot*/
+
+.escargot {
+    display: inline-block;
+    height: 150px;
+    width: 150px;
+    background: url('img/assets/karakoly-animated.png');
+    background-position: 0px 0px;
+    position: relative;
+}
+
+
+@keyframes sprite3 {
+    from {
+        background-position: 0px 0px;
+    }
+
+    to {
+        background-position: -800px 0px;
+    }
+
+}
+
+#fighter3:hover .escargot {
+    animation: sprite3 1s steps(6);
+}
+
+
+/*VALIDATION ET START*/
+
+.start_bar {
+    margin-top: 25px;
+    width: 100%;
+    min-height: 5vh;
+    display: flex;
+    justify-content: center;
+}
+
+.start_bar button {
+    display: flex;
+    font-family: PressStart;
+    font-size: 22px;
+    background-color: green;
+    border: 2px white solid;
+    color: white;
+    padding: 25px 18px;
+    text-align: center;
+    transition: all 1s ease;
+    border-radius: 15px;
+}
+
+.start_bar button:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    cursor: pointer;
+}
+
+
+
+/*MEDIA QUERIES*/
+
+@media screen and (max-width: 1500px) {
+
+    body {
+        width: 1250px;
+    }
+}
