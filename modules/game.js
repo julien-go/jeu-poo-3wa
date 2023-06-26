@@ -41,7 +41,7 @@ class Game {
             return new Loup(characterPseudo, 'loup', 12, 90, 1, 10, 4);
         }
         else if (characterType == type3.getType) {
-            return new Escargot(characterPseudo, 'escargot', 8, 120, 1, 10, 20);
+            return new Escargot(characterPseudo, 'escargot', 8, 110, 1, 10, 20);
         }
         else {
             return myFighter = characterTable[Math.floor(Math.random() * characterTable.length)];

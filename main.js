@@ -11,7 +11,7 @@ import Escargot from "./modules/escargot.js";
 // Déclaration des personnages et leurs paramètres
 let toucan = new Toucan('Méchant Toucan', 'toucan', 10, 100, 1, 10, 15);
 let loup = new Loup('Loup agressif', 'loup', 12, 90, 1, 10, 4);
-let escargot = new Escargot('Escargot malfaisant', 'escargot', 8, 120, 1, 10, 20);
+let escargot = new Escargot('Escargot malfaisant', 'escargot', 8, 110, 1, 10, 20);
 let characterTable = [toucan, loup, escargot];
 
 // On pointe sur les DIV qui correspondent aux persos
